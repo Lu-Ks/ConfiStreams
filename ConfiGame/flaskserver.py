@@ -187,18 +187,8 @@ def getImage():
 def getScoreboard():
     s = '''<html>
     <body>
-        '''
-    teamarr = []
-    for i in range(4):
-        hexcolor = '#'
-        for j in range(3):
-            hexcolor += hex(COLORMAP[i][j])[2:].zfill(2)
-        teamscore = int(red.get('TEAMSCORE:'+str(i)))
-        teamarr.append((-teamscore, f'<p style="font-family:verdana;color:{hexcolor};margin:0">{teamscore/1_000_000:.3f} M<br></p>'))
-    teamarr.sort()
-    for a, b in teamarr:
-        s += b
-    s += '''<script>
+    <h1 style="color:green;">Green is win</h1>
+    <script>
         setTimeout(function(){
             window.location.reload(1);
         }, 30000);
